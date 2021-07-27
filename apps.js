@@ -13,6 +13,16 @@ const SeattleStore = {
         return Math.ceil(randomCount)
     },
     generateExplicit: function(){
-        return generateSales
+        return generateSales(nextStore.averageSales, nextStore.customerAtThatTime);
+    },
+};
+const nextStore = {
+    averageSales: 6.3,
+    customerAtThatTime: 5,
+    generateNextStoreSales: function(){
+        return generateSales(this.averageSales,this.customerAtThatTime);
+    },
+    generateExplicit: function(){
+        return generateSales(nextStore.averageSales, nextStore.customerAtThatTime);
     }
-}
+};
