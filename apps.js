@@ -57,7 +57,20 @@ getCustomersPerHour: function(){
         this.customersPerHour.push(getRandomNumberOfCustomersGivenARange(this.minCustomers, this.maxCustomers))
         return (Math.floor(Math.random() * (maxCustomers - minCustomers +1)) + minCustomers);
     }
-    console.log("Loaded Up the customers")
+    console.log("Loaded Up the customers...")
+},
+
+//now based on an average number of customers in a given hour, we need to the value from the arry random number along with data given for 
+getCookiesSoldPerHour: function(){
+    //initalize an ongoing total
+    totalDailyCookies = 0
+    this.getCustomersPerHour(); //load customers data
+    //lets load up our cookiesSoldPerHour by walking through each element in our average customers per day array (number of customers * )
+    for (let index = 0; index < this.customersPerHour.length; index++){
+        //calc number of cookies
+        let dailyCookies = Math.floor(this.customersPerHour[index] * this.avgCookieSale);
+        //Lets floor it so we get a whole number
+    }
 }
 
 //call the methods
@@ -65,3 +78,7 @@ getCustomersPerHour: function(){
 Seattle.getCustomersPerHour(); //should load the array
 
 //iterate through the array customers per hour
+for (let index = 0; index < Seattle.customersPerHour.length; index++) {
+    // console.log(Seattle.getcustomersPerHour[index]);
+    
+}
