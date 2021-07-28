@@ -1,4 +1,6 @@
- /*function generateSales(averageSales, customerAtThatTime){
+ /*   Notes from me trying this on my own:
+ 
+ function generateSales(averageSales, customerAtThatTime){
     return averageSales * customerAtThatTime;
 }
 
@@ -25,11 +27,10 @@ const nextStore = {
     generateExplicit: function(){
         return generateSales(nextStore.averageSales, nextStore.customerAtThatTime);
     }
-}; */
+}; 
 
 
-// Notes from class 7:
-
+  //Notes from class 7: July 27, 2021:
 //alert("Loaded your JS");
 
 //we need to be able to keep yp with sales numbers byt he hours so we need to have a list of the hours
@@ -81,4 +82,25 @@ Seattle.getCustomersPerHour(); //should load the array
 for (let index = 0; index < Seattle.customersPerHour.length; index++) {
     // console.log(Seattle.getcustomersPerHour[index]);
     
+}   */
+
+
+/* This is from me coding along with Kevin's code.  I changed his comments to better suit my own notes:  */
+
+//alert ("JS linked!")
+
+//We need a generic function customized to our needs to pass the data we have
+//We also need a random number of customers within range of data we were given.
+function getRandomNumberOfCustomersGivenARange(minCustomers, maxCustomers){
+    return (Math.floor(Math.random() * (maxCustomers - minCustomers)) + minCustomers);  /* if we get 0 we start at minCustomers, otherwise we multiply difference between max and min time 0 or 1 adding 1 because zero based.  I did this in my original code and caught this in the class lecture.  I would like to know the difference in how Kevin did his and how I did mine
+        generateRandomCustomers: function(){
+        const range = SeattleStore.maxCustomer - SeattleStore.minCustomer
+        const randomCount = Math.random() * range - SeattleStore.minCustomer
+        return Math.ceil(randomCount)
+    },*/
 }
+
+// The hours of operation for all stores are: 6am to 8pm
+// In order to keep up with sales numbers by the hour we need to have a list of all the hours.
+const businessHours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"];
+
